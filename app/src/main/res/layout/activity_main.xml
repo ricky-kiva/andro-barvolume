@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--in xml file you could edit the layout for the app-->
 
 <!--LinearLayout: will set the layout to linear -->
+<!--this is the parent of all the sub-component-->
 <!--this is an 'opening tag'-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,9 +12,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
+    <!--'xmlns:android' indicates the 'namespace' inside this 'xml'-->
+    <!--in 'android:padding', 'android' is the 'namespace'-->
+    <!--'padding' is the attribute-->
 
     <!--this is a 'self-closing tag'-->
+    <!--'TextView' component to display plain text-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +27,7 @@
         />
     <!--'android:text' resource need to be extracted by 'ALT+ENTER'-->
 
+    <!--'EditText' component for text input-->
     <EditText
         android:id="@+id/edt_length"
         android:layout_width="match_parent"
@@ -27,12 +35,14 @@
         android:inputType="numberDecimal"
         android:lines="1"
         />
+    <!--"@+id/view_id" to assign 'id' to a 'view'-->
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/width"
         />
+    <!--use '@<res_type>/res_id' to call value from 'res' folder-->
 
     <EditText
         android:id="@+id/edt_width"
@@ -56,6 +66,7 @@
         android:lines="1"
         />
 
+    <!--'Button' component as button-->
     <Button
         android:id="@+id/btn_result"
         android:layout_width="match_parent"
@@ -72,6 +83,13 @@
         android:textSize="24sp"
         android:textStyle="bold"
         />
+
+    <!-- sizes in xml:
+    sp (scale independent pixel)    : for text. It's scaled as 'user's preference'
+    dp (density independent pixel)  : for 'anything but text'. scaled as 'user's preference'
+    px (pixel)                      : As the screen size's pixel
+
+    -->
 
 </LinearLayout>
 <!--this is a 'closing tag'-->
