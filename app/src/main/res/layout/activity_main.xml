@@ -12,20 +12,66 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!--this is a 'self-closing tag'-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Panjang"/>
+        android:text="@string/length"
+        />
+    <!--'android:text' resource need to be extracted by 'ALT+ENTER'-->
 
     <EditText
         android:id="@+id/edt_length"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:text="1"/>
+        android:lines="1"
+        />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/width"
+        />
 
+    <EditText
+        android:id="@+id/edt_width"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:lines="1"
+        />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/height"
+        />
+
+    <EditText
+        android:id="@+id/edt_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:lines="1"
+        />
+
+    <Button
+        android:id="@+id/btn_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/result"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        />
 
 </LinearLayout>
 <!--this is a 'closing tag'-->
