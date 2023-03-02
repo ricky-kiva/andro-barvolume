@@ -40,8 +40,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val inputWidth = edtWidth.text.toString().trim()
             val inputHeight = edtHeight.text.toString().trim()
 
-            val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
-            tvResult.text = volume.toInt().toString()
+            var isEmptyFields = false
+
+            isEmptyFields = emptyFieldCheck(edtLength, inputLength)
+            isEmptyFields = emptyFieldCheck(edtWidth, inputWidth)
+            isEmptyFields = emptyFieldCheck(edtHeight, inputHeight)
+
+            if (!isEmptyFields) {
+                val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
+                tvResult.text = volume.toInt().toString()
+            }
         }
+    }
+}
+
+fun emptyFieldCheck(view: EditText,field: String): Boolean {
+    if (field.isEmpty()) {
+        view.error = "This field cannot be empty"
+        return true
+    } else {
+        return false
     }
 }
