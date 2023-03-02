@@ -31,6 +31,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // this need to contract Interface 'View.OnClickListener'
         btnResult.setOnClickListener(this)
 
+        // calling the 'saved state' if there is any
+        if (savedInstanceState != null) {
+            val result = savedInstanceState.getString(STATE_RESULT)
+            tvResult.text = result
+        }
+
     }
 
     // overriding from 'View.OnClickListener'
@@ -50,10 +56,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
                 tvResult.text = volume.toInt().toString()
             }
+
         }
+    }
+
+    // adding 'companion object' for 'onSaveInstanceState()'
+    companion object {
+        private const val STATE_RESULT = "state_result"
+    }
+
+    // adding 'onSaveInstanceState()' from 'AppCompatActivity()' interface
+    // to enable 'saving state' when 'rotated'
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(STATE_RESULT, tvResult.text.toString())
     }
 }
 
+// function to check if the 'input field' is 'empty'
 fun emptyFieldCheck(view: EditText,field: String): Boolean {
     if (field.isEmpty()) {
         view.error = "This field cannot be empty"
