@@ -24,6 +24,11 @@ android {
     }
     namespace 'com.example.barvolume'
 
+    // This will allow 'viewBinding'
+    buildFeatures {
+        viewBinding true
+    }
+
 }
 
 dependencies {
