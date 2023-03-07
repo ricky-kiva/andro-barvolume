@@ -120,3 +120,12 @@ fun emptyFieldCheck(view: EditText,field: String): Boolean {
         false
     }
 }
+
+/* ViewBinding summary */
+// View Binding is a feature to 'bind' 'property' to 'View'. It will give access to 'all' 'View' inside an 'XML layout'.
+// some of its benefits are:
+// - Compile Time Safety: safe from nullPointerException because it 'takes Id' from 'different layout'
+// - Elegance: cleaner code
+// - Correct Type of View: give 'correct' component 'type', unlike 'findViewById' that 'could be wrong' giving type
+// - Build Speed: even faster than DataBinding
+// - Support Java & Kotlin
